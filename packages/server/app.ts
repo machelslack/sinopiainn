@@ -5,6 +5,9 @@ import templates from "./src/templates";
 // Create a new express application instance
 const app: express.Application = express();
 
+// register routed endpoints
+require('./src/endpoints')(app);
+
 const template = templates["reservation"]({});
 
 app.get("/", function(req, res) {
